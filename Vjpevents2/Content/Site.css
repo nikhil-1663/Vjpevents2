@@ -1,0 +1,662 @@
+﻿
+
+
+body {
+    color: #555;
+    /*background: #222;*/
+    text-align: center;
+    font-family: 'Roboto Mono';
+    padding: 1em;
+    background-image: url('/Image/back2.jpg');
+    background-size: cover; /* scales image to cover entire area */
+    background-repeat: no-repeat; /* prevents tiling */
+    background-position: center; /* centers the image */
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* distribute 3 sections */
+    padding: 0 20px;
+    height: 90px;
+    background-color: rgba(235, 200, 45, 0.9);
+    position: relative;
+}
+
+
+.nav-container {
+    flex: 1; /* reserve equal space */
+    display: flex;
+    justify-content: center; /* force center alignment */
+}
+
+.sidebar {
+    display: none; /* hidden by default */
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 1rem;
+    }
+
+    .logo h3 {
+        font-weight: bold;
+        margin-left: 15px;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+/* Center nav links */
+nav ul {
+    list-style: none;
+    display: flex;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    justify-content: center; /* centers all li items horizontally */
+    align-items: center; /* centers vertically if needed */
+    padding: 0;
+}
+
+    nav ul li {
+        margin: 0 10px;
+        font-weight: bold;
+    }
+
+        nav ul li a {
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+            nav ul li a:hover {
+                color: #0033CC;
+                text-decoration: underline;
+            }
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*             background-image: url('/Image/b1.jpg')
+ */
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer {
+    background-color: rgba(235, 200, 45, 0.7); /* semi-transparent gold/yellow */
+    padding: 30px 0; /* reduced from 40px to 30px */
+    height: 37.5%; /* 75% of 50% */
+}
+
+
+.footer-col {
+    width: 25%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+    .footer-col h4 {
+        font-size: 14px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+        font-weight: 500;
+        position: relative;
+    }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            background-color: #E0E0E0;
+            height: 2px;
+            box-sizing: border-box;
+            width: 40px;
+        }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .footer-col ul li {
+            margin-bottom: 6px;
+        }
+
+            .footer-col ul li a {
+                font-size: 12px;
+                text-transform: capitalize;
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 300;
+                display: block;
+            }
+
+                .footer-col ul li a:hover {
+                    color: #e91e63;
+                }
+
+    .footer-col .social-links {
+        display: flex;
+        margin-top: 10px;
+    }
+
+        .footer-col .social-links a {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+            .footer-col .social-links a:hover {
+                background-color: #ffffff;
+                color: #6a0dad;
+            }
+
+
+/* Sidebar active */
+/*.sidebar.active {
+        left: 0;
+    }*/
+
+/* Sidebar links */
+/*.sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+            .sidebar ul li a {
+                color: black;
+                font-weight: bold;
+                text-decoration: none;
+                font-size: 1.2rem;
+                display: block;
+                transition: color 0.3s;
+            }
+
+                .sidebar ul li a:hover {
+                    color: #0033CC;
+                }*/
+
+/* Adjust menu-toggle on mobile */
+.menu-toggle {
+    display: none; /* hide the hamburger on desktop */
+}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: 70px;
+        background-color: rgba(235, 200, 45, 0.9);
+        /*padding: 10px;*/
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    body {
+        color: #555;
+        /*background: #222;*/
+        text-align: center;
+        font-family: 'Roboto Mono';
+        padding: 1em;
+        background-image: url('/Image/back2.jpg');
+        background-size: cover; /* scales image to cover entire area */
+        background-repeat: no-repeat; /* prevents tiling */
+        background-position: center; /* centers the image */
+        background-attachment: fixed;
+    }
+
+    .logo img {
+        height: 4rem; /* slightly smaller on mobile */
+        transform: translateY(-8px); /* adjust image upwards */
+    }
+
+    .logo h3 {
+        margin-left: 10px; /* reduce space between image and text */
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+
+    /* Hide normal nav initially */
+    nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* below navbar */
+        right: 0;
+        left: 1px;
+        background-color: rgba(235, 200, 45, 0.95);
+        max-height: 0; /* hidden */
+        overflow: hidden;
+        width: 100%;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+        nav ul li {
+            margin: 15px 0;
+        }
+
+        /* Slide down menu when active */
+        nav ul.active {
+            max-height: 140px; /* adjust based on number of links */
+        }
+
+    .nav-container {
+        display: none; /* hide desktop nav */
+    }
+    .menu-toggle {
+        display: flex; /* enable flexbox */
+        justify-content: center; /* center horizontally */
+        align-items: center; /* center vertically */
+        width: 50px; /* fixed width */
+        height: 50px; /* fixed height */
+        cursor: pointer; /* make it clickable */
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 7px;
+    }
+
+    /*.menu-toggle {
+        display: flex;*/ /* enable flexbox */
+        /*justify-content: center;*/ /* center horizontally (optional) */
+        /*align-items: center;*/ /* center vertically */
+        /*height: 100%;*/ /* take full height of parent container */
+        /*cursor: pointer;*/ /* make it clickable */
+        /*color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }*/
+
+
+    .sidebar {
+        display: block; /* show sidebar */
+        position: fixed;
+        top: 0;
+        left: -333px; /* hide by default */
+        width: 330px;
+        height: 100%;
+        background-color: rgba(235, 200, 45, 0.85);
+        padding-top: 70px;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+        .sidebar.active {
+            left: 0; /* slide in */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            text-align: center;
+        }
+
+
+            .sidebar ul li {
+                margin: 8px 0; /* reduce margin between items */
+            }
+
+                .sidebar ul li a {
+                    position: relative;
+                    color: black;
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                }
+
+                    /* Add animated underline */
+                    .sidebar ul li a::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: -5px;
+                        width: 0;
+                        height: 3px;
+                        background: black; /* changed to black */
+                        transition: all 0.4s ease;
+                        transform: translateX(-50%);
+                        border-radius: 2px;
+                    }
+
+                    /* On hover — fancy gradient glow */
+                    .sidebar ul li a:hover {
+                        color: black; /* keep text black */
+
+                        transform: scale(1.1);
+                    }
+
+                        /* Underline expands */
+                        .sidebar ul li a:hover::after {
+                            width: 60%;
+                        }
+
+
+        .sidebar img {
+            max-width: 80%; /* prevent overflow */
+            height: auto; /* keep portrait ratio */
+            border-radius: 12px;
+            object-fit: cover;
+            margin-top: 2px;
+            /*box-shadow: 0 4px 12px rgba(0,0,0,0.3);*/
+        }
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+    .social-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 20%;
+        color: white;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+        /* Facebook */
+        .social-links a.facebook {
+            background: #1877f2;
+            color: white;
+            width: 50px; /* fixed circle width */
+            height: 50px; /* fixed circle height */
+            border-radius: 50%;
+            display: flex; /* use flex to center icon */
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+            .social-links a.facebook:hover {
+                background: #145dbf;
+                font-size: 1.8rem; /* bigger icon inside */
+            }
+
+        /* Instagram */
+        .social-links a.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+            width: 50px; /* fixed circle width */
+            height: 50px; /* fixed circle height */
+            border-radius: 50%;
+            display: flex; /* use flex to center icon */
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+            .social-links a.instagram:hover {
+                filter: brightness(1.2);
+                font-size: 1.8rem; /* bigger icon inside */
+            }
+
+        /* TikTok */
+        .social-links a.tiktok {
+            background: black;
+            color: white;
+            width: 50px; /* fixed circle width */
+            height: 50px; /* fixed circle height */
+            border-radius: 50%;
+            display: flex; /* use flex to center icon */
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+            .social-links a.tiktok:hover {
+                background: #222;
+                font-size: 1.8rem; /* bigger icon inside */
+            }
+
+        .social-links a.whatsapp {
+            background: #25D366;
+            color: white;
+            width: 50px; /* fixed circle width */
+            height: 50px; /* fixed circle height */
+            border-radius: 50%;
+            display: flex; /* use flex to center icon */
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: background 0.3s;
+        }
+
+            .social-links a.whatsapp i {
+                font-size: 1.8rem; /* bigger icon inside */
+            }
+
+
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+    .close-btn:hover {
+        color: #0033CC;
+    }
+
+/*    .footer {
+        text-align: center;
+        padding: 30px 80px;
+
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+        .footer-col h4::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+        }
+
+        .footer-col .social-links {
+            justify-content: center;
+        }
+*/
+
+
+.footer {
+    background-color: rgba(235, 200, 45, 0.9);
+    color: #222;
+    padding: 15px 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1 1 250px;
+    max-width: 400px;
+}
+
+    .footer-col h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .footer-col h4 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .footer-col p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .footer-col a {
+        color: #333; /* match your footer text color */
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .footer-col a:hover {
+            color: #0033CC; /* similar to nav hover */
+        }
+
+
+.slogan {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Social Links (using your styles) */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+    .social-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.8rem;
+        margin: 0 5px;
+        transition: 0.3s;
+    }
+
+        /* Individual social styles */
+        .social-links a.whatsapp {
+            background: #25D366;
+        }
+
+        .social-links a.facebook {
+            background: #1877f2;
+        }
+
+        .social-links a.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .social-links a.tiktok {
+            background: black;
+        }
+
+        /* Hover effects */
+        .social-links a.whatsapp:hover {
+            filter: brightness(1.2);
+        }
+
+        .social-links a.facebook:hover {
+            background: #145dbf;
+        }
+
+        .social-links a.instagram:hover {
+            filter: brightness(1.2);
+        }
+
+        .social-links a.tiktok:hover {
+            background: #222;
+        }
+
+.footer-bottom {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.footer-col a {
+    color: #333; /* match your footer text color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    .footer-col a:hover {
+        color: #0033CC; /* similar to nav hover */
+    }
+
+
+
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+/*.dl-horizontal dt {
+    white-space: normal;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/

@@ -1,0 +1,87 @@
+﻿@*@model Vjpevents2*@
+@{
+    ViewData["Title"] = "Home";
+}
+<!-- ✅ Font Awesome (CDN version, works online) -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer" />
+@*<link href="~/css/stylesheet.css" rel="stylesheet" />*@
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<div class="container-fluid">
+    <div class="content">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert">@TempData["Success"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert">@TempData["Error"]</div>
+        }
+
+        <section class="hero-overlay">
+            <h1 class="tagline">Transforming Every Occasion into a Memory</h1>
+            <p class="hero-description">
+                Specializing in décor for all occasions — from intimate gatherings to grand celebrations.
+                We offer stage and ceiling draping, lighting, and creative event styling that brings your
+                vision to life.
+            </p>
+            <a href="/Contact/Index" class="cta-button">Get in Touch</a>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/Image/g9.jpg" alt="About VJP Events">
+                </div>
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>
+                        At <strong>VJP Events</strong>, we turn your vision into unforgettable experiences.
+                        With years of creativity and passion, we specialize in transforming venues with
+                        elegant décor, lighting, and styling — perfect for weddings, birthdays, corporate
+                        functions, and more. Every detail is crafted to reflect your story and create lasting memories.
+                    </p>
+                    <p>
+                        Our dedicated team takes pride in blending sophistication and innovation to
+                        bring each event to life — because we believe every occasion deserves to shine.
+                    </p>
+                    <a href="/Contact/Index" class="about-btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="services" class="services-section">
+            <h2 class="section-title">Explore Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="/Image/g12.jpg" alt="Baby Shower" />
+                    <div class="service-info">
+                        <i class="fa fa-baby"></i>
+                        <h3>Baby Showers</h3>
+                        <p>Celebrate new beginnings with elegant and joyful baby shower décor designed to make every moment magical.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="/Image/3.jpg" alt="Birthdays" />
+                    <div class="service-info">
+                        <i class="fa fa-birthday-cake"></i>
+                        <h3>Birthdays</h3>
+                        <p>Make every birthday unforgettable with vibrant themes, lighting, and stylish decorations tailored to your taste.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="/Image/6.jpg" alt="Ceremonies" />
+                    <div class="service-info">
+                        <i class="fa fa-heart"></i>
+                        <h3>Ceremonies</h3>
+                        <p>Bring grace and beauty to your special ceremonies with stunning draping, lighting, and floral arrangements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

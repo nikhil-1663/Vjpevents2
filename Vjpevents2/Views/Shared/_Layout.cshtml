@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Vjpevents </title>
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    @*   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="~/image/logo3.png" alt="Logo" />
+            @* <h3>VJP Events</h3> *@
+        </div>
+
+        <nav class="nav-container">
+            <ul id="nav-links">
+                @*<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="about">About Us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="services">Services</a></li>
+                    <li><a asp-area="" asp-controller="Gallery" asp-action="Index">Gallery</a></li>
+                    <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contact Us</a></li>*@
+                <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                <li><a href="/Home/Index#about" class="nav-link">About Us</a></li>
+                <li><a href="/Home/Index#services" class="nav-link">Services</a></li>
+                <li>@Html.ActionLink("Gallery", "Index", "Gallery", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "nav-link" })</li>
+
+            </ul>
+        </nav>
+
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+
+
+    </header>
+    <div class="sidebar" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <div class="sidebar-content">
+
+            <ul id="sidebar-links">
+                <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("About Us", "Index", "Home", new { area = "", fragment = "about" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Services", "Index", "Home", new { area = "", fragment = "services" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Gallery", "Index", "Gallery", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "nav-link" })</li>
+            </ul>
+            <img src="~/image/ban4.png" alt="Sidebar Banner" />
+            <div class="social-links">
+                <a href="https://wa.me/message/U76G6UEWLW6TK1" target="_blank" class="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.facebook.com/share/16ZrhnHJij/" target="_blank" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/vjpevents_dbn?utm_source=qr&igsh=MWpvYzZzNHBucXpwOQ==" target="_blank" class="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/%40vjpevents_dbn?_t=ZS-90KUVyf57Hl&_r=1" target="_blank" class="tiktok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col about">
+                <h2>VJP Events</h2>
+                <p>Specializing in decor, catering, and lighting for all occasions—weddings, birthdays, draping, and ceiling lighting.</p>
+                <p class="slogan">“Small or Grand, We Make It Stand Out”</p>
+                <p><strong>Phone:</strong> <a href="tel:+27814878261">081 487 8261</a></p>
+                <p><strong>Email:</strong> <a href="mailto:vjpevents22@gmail.com">vjpevents22@gmail.com</a></p>
+            </div>
+            <div class="footer-col social">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://wa.me/message/U76G6UEWLW6TK1" target="_blank" class="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/16ZrhnHJij/" target="_blank" class="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/vjpevents_dbn?utm_source=qr&igsh=MWpvYzZzNHBucXpwOQ==" target="_blank" class="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href='@("https://www.tiktok.com/@vjpevents_dbn?_t=ZS-90KUVyf57Hl&_r=1")' target="_blank" class="tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+
+
+                    @*<a href="https://www.tiktok.com/@@vjpevents_dbn?_t=ZS-90KUVyf57Hl&_r=1" target="_blank" class="tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>*@
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 VJP Events. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="@Url.Content("~/Scripts/jquery-3.4.1.min.js")"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const sidebar = document.getElementById("sidebar");
+        const closeBtn = document.querySelector(".close-btn");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+        })
+
+        // Optional: close sidebar when clicking a link
+        document.querySelectorAll("#sidebar a").forEach(link => {
+            link.addEventListener("click", () => {
+                sidebar.classList.remove("active");
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@

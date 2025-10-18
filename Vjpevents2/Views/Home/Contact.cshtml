@@ -1,0 +1,89 @@
+﻿@model Vjpevents2.Models.Contact
+@{
+    ViewBag.Title = "Contact Us";
+}
+<div class="message-area">
+    @if (TempData["Success"] != null)
+    {
+        <div class="success-message">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="error-message">@TempData["Error"]</div>
+    }
+</div>
+
+
+<link href="~/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+@*<link href="~/css/stylesheet1.css" rel="stylesheet" />*@
+<link href="~/Content/StyleSheet3.css" rel="stylesheet" />
+
+<div class="new_home_web">
+    <div class="responsive-container-block big-container">
+        @* <img class="imgBG" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/aw65.png" /> *@
+        <div class="responsive-container-block textContainer">
+            <div class="topHead">
+                <p class="text-blk heading">
+                    Get in
+                    <span class="orangeText">touch</span>
+                </p>
+                @* <div class="orangeLine" id="w-c-s-bgc_p-2-dm-id"></div> *@
+            </div>
+            <p class="text-blk subHeading">
+                Have a special event coming up? Whether it’s a birthday, party, ceremony, or corporate function,
+                we’d love to help bring your vision to life. Fill out the form below or reach out to us directly,
+                and we’ll get back to you with all the details you need.
+            </p>
+
+        </div>
+
+        <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line" id="i69b">
+
+                @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @class = "form-box" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container-block form-wrapper">
+                        <div class="responsive-container-block">
+                            <div class="left4">
+                                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "input", placeholder = "Your Name" })
+                                    @* @Html.ValidationMessageFor(m => m.Name, "", new { @style = "color:red" }) *@
+                                </div>
+
+                                <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "input", placeholder = "Email Address", type = "email" })
+                                    @* @Html.ValidationMessageFor(m => m.Email, "", new { @style = "color:red" }) *@
+                                </div>
+                            </div>
+
+                            <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                                @Html.TextBoxFor(m => m.Number, new { @class = "input", placeholder = "Your Phone Number" })
+                                @* @Html.ValidationMessageFor(m => m.Name, "", new { @style = "color:red" }) *@
+                            </div>
+
+
+                            <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12">
+                                @Html.TextAreaFor(m => m.Message, 5, 40, new { @class = "textinput", placeholder = "Message" })
+                                @* @Html.ValidationMessageFor(m => m.Message, "", new { @style = "color:red" }) *@
+                            </div>
+                        </div>
+
+                        @*  <button type="submit" class="send" id="w-c-s-bgc_p-1-dm-id">
+                                Send
+                            </button> *@
+                        <button type="submit" class="send">
+                            <i class="fa fa-paper-plane"></i> Send Message
+                        </button>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
