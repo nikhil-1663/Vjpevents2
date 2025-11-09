@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] Vjpevents </title>
+    <link rel="icon" type="image/png" href="~/image/logo3.png" />
+
     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
     @*   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -26,10 +28,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="about">About Us</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-fragment="services">Services</a></li>
                     <li><a asp-area="" asp-controller="Gallery" asp-action="Index">Gallery</a></li>
-                    <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contact Us</a></li>*@
+                    <li>s<a asp-area="" asp-controller="Contact" asp-action="Index">Contact Us</a></li>*@
                 <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                <li><a href="/Home/Index#about" class="nav-link">About Us</a></li>
-                <li><a href="/Home/Index#services" class="nav-link">Services</a></li>
+           @*     <li><a href="/Home/Index#about" class="nav-link">About Us</a></li>*@
+              @*  <li><a href="/Home/Index#services" class="nav-link">Services</a></li>*@
                 <li>@Html.ActionLink("Gallery", "Index", "Gallery", new { area = "" }, new { @class = "nav-link" })</li>
                 <li>@Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "nav-link" })</li>
 
@@ -49,8 +51,8 @@
 
             <ul id="sidebar-links">
                 <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("About Us", "Index", "Home", new { area = "", fragment = "about" }, new { @class = "nav-link" })</li>
-                <li>@Html.ActionLink("Services", "Index", "Home", new { area = "", fragment = "services" }, new { @class = "nav-link" })</li>
+               @* <li>@Html.ActionLink("About Us", "Index", "Home", new { area = "", fragment = "about" }, new { @class = "nav-link" })</li>*@
+               @* <li>@Html.ActionLink("Services", "Index", "Home", new { area = "", fragment = "services" }, new { @class = "nav-link" })</li>*@
                 <li>@Html.ActionLink("Gallery", "Index", "Gallery", new { area = "" }, new { @class = "nav-link" })</li>
                 <li>@Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "nav-link" })</li>
             </ul>

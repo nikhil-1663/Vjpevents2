@@ -168,6 +168,7 @@
     <Content Include="Image\ban3.png" />
     <Content Include="Image\ban4.png" />
     <Content Include="Image\banner.jpg" />
+    <Content Include="Image\cere1.jpg" />
     <Content Include="Image\g1.jpg" />
     <Content Include="Image\g10.jpg" />
     <Content Include="Image\g11.jpg" />
@@ -182,9 +183,11 @@
     <Content Include="Image\g7.jpg" />
     <Content Include="Image\g8.jpg" />
     <Content Include="Image\g9.jpg" />
+    <Content Include="Image\hurdee1.jpg" />
     <Content Include="Image\logo.jpg" />
     <Content Include="Image\logo2.png" />
     <Content Include="Image\logo3.png" />
+    <Content Include="Image\wedding1.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

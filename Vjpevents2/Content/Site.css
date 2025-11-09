@@ -240,7 +240,7 @@ nav ul {
 
     .logo img {
         height: 4rem; /* slightly smaller on mobile */
-        transform: translateY(-8px); /* adjust image upwards */
+        /*transform: translateY(-8px);*/ /* adjust image upwards */
     }
 
     .logo h3 {
